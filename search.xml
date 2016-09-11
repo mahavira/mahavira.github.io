@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[正弦、余弦与正切]]></title>
+      <url>http://mahavira.github.io/2016/09/11/%E6%AD%A3%E5%BC%A6%E3%80%81%E4%BD%99%E5%BC%A6%E4%B8%8E%E6%AD%A3%E5%88%87/</url>
+      <content type="html"><![CDATA[<p>给定某个圆的半径和角度,我们就可以分别计算出圆周上某一点的X与Y坐标了。<br>某X坐标等于圆半径乘以该角的余弦值,Y坐标等于圆半径乘以该角的正弦值。</p>
+<p><img src="/images/1.png" alt=""></p>
+<blockquote>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>cos(θ) = 邻边 / 斜边<br>sin(θ) = 对边 / 斜边<br>tan(θ) = 对边 / 邻边</p>
+</blockquote>
+<p>如果我们知道角度是60度,半径长为100,那么我们可以通过以下的计算得出结果</p>
+<ul>
+<li>角度转换为弧度 θ = Math.sin(Math.PI/180*60)</li>
+<li>X坐标值为: Math.cos(θ) * 100</li>
+<li>Y坐标值为: Math.sin(θ) * 100</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[角度与弧度转换]]></title>
+      <url>http://mahavira.github.io/2016/09/11/%E8%A7%92%E5%BA%A6%E4%B8%8E%E5%BC%A7%E5%BA%A6%E8%BD%AC%E6%8D%A2/</url>
+      <content type="html"><![CDATA[<p>弧度 = (π/180) * 角度<br>角度 = (180/π) * 弧度<br>例如45角度等于 (π/180) * 45 弧度，1弧度等于 (180/π)*1 角度</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://mahavira.github.io/2015/04/11/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
