@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜易贷</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./css/app.min.css"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<div class="page" id="moneyState" >
+    <div class="top">
+        <div class="row">
+            <div class="col-xs-12">
+                <img class="top-img" src="./res/qrcode.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+    <p class="font-size-1-2 text-center">
+        长按二维码关注搜易贷微信服务号，<br/> 还有更多惊喜在召唤你！
+    </p>
+
+    <h2 class="ti2 text-center"> <img class="width-50" src="./res/label-my-money.png" alt=""/></h2>
+
+    <div class="row">
+        <div class="col-xs-1 text-right">
+            <b>兑换规则</b>
+        </div>
+        <div class="col-xs-11">
+            <ol class="money-role">
+                <li>每位用户每日最高可累计兑换88元红包，其中包括“自立更生”的分数和“好友助力”的分数总和。</li>
+                <li>奖金每日清零，请及时兑换。</li>
+                <li><b>好友助力奖励每天仅有一次兑换机会。</b></li>
+                <li>参与本次活动的搜易贷用户，每个账户每天最高只能兑换88元红包。</li>
+            </ol>
+        </div>
+    </div>
+
+    <h5 class="font-size-1-2 margin-top-30 text-center">今日还可兑换<span id="moneyUsable">0</span>元，已兑换<span
+            id="moneyUse">0</span>元</h5>
+
+    <div class="box">
+        <div class="box-title pull-left">自力更生</div>
+        <div class="box-money pull-left" ><span id="moneySelf">0</span>元</div>
+        <a class="box-btn pull-right" href="javascript:;" id="convertSelf"></a>
+    </div>
+
+    <div class="box">
+        <div class="box-title pull-left">好友助力<a id="userList" href="lists.html">查看好友助力明细</a></div>
+        <div class="box-money pull-left"><span id="moneyFriend">0</span>元</div>
+        <a class="box-btn pull-right" href="javascript:;" id="convertFriend"></a>
+    </div>
+
+    <p class="padding-top-20 DE6B66">温馨提示：好友助力奖励每天仅可兑换一次</p>
+</div>
+
+<!-- Small modal -->
+<div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="cashFriendModal">
+    <div class="modal-backdrop fade in"></div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                每日累计兑换奖励金额为88元，当前申请的兑换额度已超出总额。您今日还可再兑换<span id=""></span>元
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modal-close"></button>
+                <button type="button" class="btn btn-primary modal-ok"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/framework.min.js"></script>
+<script src="./js/app.min.js"></script>
+<script src="https://static.souyidai.com/pv/spv_new.js"></script>
+</body>
+</html>

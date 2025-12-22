@@ -1,0 +1,11 @@
+{
+  "errorCode": 0,
+  "data": {
+    "money_usable": 78,
+    "money_use": 10,
+    "money_self": 1,
+    "money_friend": 1000,
+    "is_cash_self": 1,
+    "is_cash_friend": 1
+  }
+}

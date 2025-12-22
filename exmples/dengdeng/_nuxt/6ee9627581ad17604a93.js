@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{677:function(e,n,r){"use strict";r.r(n);r(88);n.default={beforeCreate:function(){this.$router.replace("/panel/profile")},render:function(){return""}}}}]);

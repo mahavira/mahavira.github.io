@@ -1,0 +1,13 @@
+{
+  "errorCode": 0,
+  "data": {
+    "uid": 1,
+    "is_bind": 1,
+    "count_play": 1,
+    "count_help": 0,
+    "picture": "examples/QQ20150617-3@2x.png",
+    "username": "红帽",
+    "friend_picture": "examples/picture.jpg",
+    "friend_username": "萤火虫"
+  }
+}

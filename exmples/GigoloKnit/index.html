@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜易贷</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./css/app.min.css"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<div id="homeState" class="page">
+    <img class="logo" src="./res/logo-souyidai.png" alt=""/>
+    <img class="subject" src="./res/label-title.png" alt=""/>
+
+    <div class="home-btn">
+        <a href="javascript:;" class="btn btn-start"></a>
+    </div>
+
+    <div class="by-me" style="display: none">
+        <div class="row home-btn">
+            <div class="col-xs-6"><a href="javascript:;" class="btn btn-share"></a></div>
+            <div class="col-xs-6"><a href="money.html" class="btn btn-money"></a></div>
+        </div>
+
+        <div class="row home-fot">
+            <div class="col-xs-7">
+                <div class="">今日获得奖励：<span id="todayMoney"></span>元</div>
+            </div>
+            <div class="col-xs-5 text-right">
+                <a class="btn-rule" href="./role.html">查看游戏规则</a>
+            </div>
+        </div>
+
+        <p class="list-title"><em class="list-title-inner">奖励明细</em></p>
+        <ul class="user-list"></ul>
+    </div>
+
+    <div class="by-friend" style="display: none">
+        <div class="friend">
+            <div class="picture">
+                <img class="friend-picture" src="./res/share.png" alt=""/>
+            </div>
+            <div class="friend-body">
+                <p class="friend-username"></p>
+                <p>邀请你爽high一局，帮Ta赚钱</p>
+                <p class="play-count">今天还能帮Ta再爽 <span class="friend-play-count"></span> 次</p>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn btn-by-me"></a>
+    </div>
+</div>
+
+<div class="page" id="shareState">
+    <img src="./res/label-share.png" alt=""/>
+</div>
+<script src="./js/framework.min.js"></script>
+<script src="./js/app.min.js"></script>
+<script src="https://static.souyidai.com/pv/spv_new.js"></script>
+</body>
+</html>

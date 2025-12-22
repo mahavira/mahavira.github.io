@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>免费领取</title>
+    <style>
+    html,body{
+      margin: 0;
+      padding: 0;
+      background: #FFD835;
+    }
+    img{
+      display: block;
+      margin: 0;
+      width: 100%;
+    }
+    </style>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <img src="WechatIMG7.jpeg" alt="">
+    </div>
+    <script>
+    $(function(){
+      $.ajax({
+        type: "GET",
+        url: 'http://i.toworks.cn/jweixin/wx_sign.php',
+        dataType: 'jsonp',
+        success: function(data){
+          wx.config({
+             // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            debug: true,
+            appId: data.result.appId, // 必填，公众号的唯一标识
+            timestamp: data.result.timestamp, // 必填，生成签名的时间戳
+            nonceStr: data.result.nonceStr, // 必填，生成签名的随机串
+            signature: data.result.signature,// 必填，签名
+            jsApiList: [] // 必填，需要使用的JS接口列表
+          });
+          wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+              wx.updateAppMessageShareData({
+                  title: '分享标题哈哈', // 分享标题
+                  desc: '分享闭幕式', // 分享描述
+                  link: 'https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                  imgUrl: 'http://i.toworks.cn/helpin/static/img/icon-pay-success.a9dfab6.png', // 分享图标
+                  success: function () {
+                    // 设置成功
+                  }
+              })
+              wx.previewImage({
+current: 'http://i.toworks.cn/helpin/static/img/icon-pay-success.a9dfab6.png', // 当前显示图片的http链接
+urls: [
+  'http://i.toworks.cn/helpin/static/img/icon-pay-success.a9dfab6.png',
+  'http://i.toworks.cn/helpin/static/img/icon-pay.0b96b70.png',
+] // 需要预览的图片http链接列表
+});
+          });
+        }
+      });
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜易贷</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./css/app.min.css"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+
+<div class="page" id="phoneState">
+    <p class="hd-1">
+        <img style="width: 95%" src="./res/reg-title.png" alt=""/>
+    </p>
+
+    <div class="input-box input-reset">
+        <input type="text" id="phoneNumber" placeholder="请输入手机号码"/>
+        <a class="input-reset-btn" href="javascript:;"></a>
+    </div>
+    <br/>
+
+    <div class="row">
+        <div class="col-xs-7">
+            <div class="input-box input-reset input-captcha">
+                <input type="text" placeholder="验证码" id="captchaImg"/>
+                <a class="input-reset-btn" href="javascript:;"></a>
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <div class="input-box gray captcha">
+                <a href="javascript:;" id="loadCaptcha">
+                    <img src="https://passport.souyidai.com/authimage.jpg" style="width:100%" alt=""/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="input-box next" id="goRegisterState">
+        <button></button>
+    </div>
+</div>
+
+<div class="page" id="registerState" style="display: none">
+    <p class="hd-1"><img style="width: 100%" src="./res/reg-title.png" alt=""/></p></p>
+
+    <div class="row">
+        <div class="col-xs-7">
+            <div class="input-box">
+                <input type="text" placeholder="验证码" id="captcha" placeholder="请输入手机验证码"/>
+            </div>
+        </div>
+        <div class="col-xs-5">
+            <a class="input-box btn-reset" href="javascript:;">
+                重新获取(99)
+            </a>
+        </div>
+    </div>
+    <br/>
+
+    <div class="input-box input-reset">
+        <input type="password" id="password" placeholder="设置搜易贷登录密码"/>
+        <a class="input-reset-btn" href="javascript:;"></a>
+    </div>
+    <p class="clause">
+        <a href="javascript:;" class="input-checkbox"></a>我已阅读并同意《搜易贷在线服务协议》
+
+    <p>
+
+    <div class="input-box money" id="goRegisterSuccessState">
+        <button></button>
+    </div>
+</div>
+
+<div class="page" id="registerSuccessState" style="display: none">
+    <div class="ok"></div>
+
+    <h3 class="text-center hd-2">注册成功并获得七夕红包</h3>
+
+    <p class="text-center hd-2">
+        另赠你60元新手红包，赶紧开启搜易贷理财App进入我的账户-我的红包 查看
+    </p>
+
+    <a class="input-box download"
+       href="http://a.app.qq.com/o/simple.jsp?pkgname=com.souyidai.investment.android&ckey=CK1289998290990"></a>
+</div>
+
+<div class="page" id="moneySuccessState" style="display: none">
+    <div class="ok"></div>
+
+    <h3 class="text-center hd-2">领取成功！</h3>
+
+    <p class="text-center hd-2">
+        奖励已放入<span id="phone"></span>的搜易贷账户
+    </p>
+
+    <a class="input-box download-share" href="javascript:;"></a>
+</div>
+
+<div class="page" id="shareState">
+    <img src="./res/label-share.png" alt=""/>
+</div>
+
+
+<script src="./js/framework.min.js"></script>
+<script src="./js/app.min.js"></script>
+<script src="https://static.souyidai.com/pv/spv_new.js"></script>
+</body>
+</html>

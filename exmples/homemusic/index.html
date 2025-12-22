@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>听，家乡的声音</title>
+  <meta name="description" content="听，家乡的声音">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link href="./main.min.css?70e7e400046c2c33a7ae" rel="stylesheet"></head>
+<body>
+<div class="logo1"></div>
+<div class="logo2"></div>
+
+<audio src="./sound/bg.mp3" id="soundBg" preload="auto"></audio>
+<audio src="./sound/error.mp3" id="soundError" preload="auto"></audio>
+<audio src="./sound/popup.mp3" id="soundPopup" preload="auto"></audio>
+<audio src="./sound/press.mp3" id="soundPress" preload="auto"></audio>
+<audio src="./sound/rewind.mp3" id="soundRewind" preload="auto"></audio>
+<audio src="./sound/slide.mp3" id="soundSlide" preload="auto"></audio>
+<audio src="./sound/blessing.mp3" id="soundBlessing" preload="auto"></audio>
+
+<!--收到来信-->
+<div class="page page-received" style="display: none">
+<div class="bg"></div>
+<div class="inner"></div>
+</div>
+
+<div class="page page-play" style="display: none">
+  <div class="title"></div>
+  <div class="txt txt1"></div>
+  <div class="txt txt2"></div>
+  <div class="txt txt3"></div>
+  <div class="btn-open-listen">
+    <div class="inner"></div>
+    <!--<div class="play-modal">-->
+        <!--<div class="loading-ani">-->
+          <!--<div class="loading-ani-left"></div>-->
+          <!--<div class="loading-ani-right"></div>-->
+        <!--</div>-->
+      <!--<a href="javascript:;">跳过</a>-->
+    <!--</div>-->
+  </div>
+</div>
+
+<div class="page page-home" style="display: none">
+  <div class="bg-icon-recorder">
+    <div class="inner"></div>
+  </div>
+  <div class="title"></div>
+  <div class="txt txt1"></div>
+  <div class="txt txt2"></div>
+  <div class="txt txt3"></div>
+  <div class="txt txt4"></div>
+  <div class="txt txt5"></div>
+  <div class="btn-open-recorder">
+    <div class="inner"></div>
+  </div>
+</div>
+
+
+<div class="page page-make">
+  <div class="title"></div>
+
+  <div class="txt txt1"></div>
+  <div class="txt txt2"></div>
+  <div class="txt txt3"></div>
+  <div class="txt txt4"></div>
+  <div class="m-recorder">
+    <!-- on -->
+    <div class="music-offon on"></div>
+    <div class="bearing-box">
+      <div class="bearing left"></div>
+      <div class="bearing right"></div>
+    </div>
+    <div class="oprate-box eject">
+      <div id="btnRecord" class="btn-recoder"></div>
+      <div id="btnPlay" class="btn-play"></div>
+      <div id="btnUpdata" class="btn-eject"></div>
+    </div>
+    <div class="oprate-box listen">
+      <div id="btnPlayMum" class="btn-playMum"></div>
+      <div id="btnShare" class="btn-recorder-share"></div>
+      <a href="/homemusic" id="btnHome" class="btn-backhome"></a>
+    </div>
+    <div class="status-text"></div>
+  </div>
+  <div class="m-tape-box">
+    <div class="m-tape e1">
+      <div class="tap-band">
+        <div class="band-bg"></div>
+        <div class="band left"></div>
+        <div class="band right"></div>
+      </div>
+      <div class="time-box">
+        <div class="time"><span>0</span>"</div>
+      </div>
+      <div class="wheel-box">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+      </div>
+      <div class="tape-main"></div>
+    </div>
+  </div>
+
+  <div class="m-mailer-box">
+    <div class="mailer-paper"></div>
+    <div class="btn-share-tomum"></div>
+  </div>
+</div>
+
+<div class="m-uploading" style="display: none">
+  <div class="mask"></div>
+  <div class="inner">
+    <div class="loading-ani">
+      <div class="loading-ani-left"></div>
+      <div class="loading-ani-right"></div>
+    </div>
+  </div>
+  <div class="p">上传中...</div>
+</div>
+
+<div class="page page-share"></div>
+
+<div class="m-loading">
+  <div class="mask"></div>
+  <div class="loading-ani">
+    <div class="loading-ani-left"></div>
+    <div class="loading-ani-right"></div>
+  </div>
+  <div class="loadProcess">
+    <div class="inner"></div>
+  </div>
+</div>
+
+<script src="./vendor/zepto/zepto.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="./main.min.js?70e7e400046c2c33a7ae"></script></body>
+</html>

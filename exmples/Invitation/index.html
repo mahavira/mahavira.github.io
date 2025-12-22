@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扶轮社北京新年慈善酒会</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="page page-back">
+    <img src="images/1.jpg" style="width: 100%" alt="">
+
+    <div class="content">
+        <h3>The New Year’s Charity Reception</h3>
+
+        <h3>扶轮社北京新年慈善酒会</h3>
+
+        <p>The Rotary Club of Beijing invites you to celebrate the New Year and participate in charity</p>
+        <p>Enjoy the mulled wine and delicate food. Auction of fabulous
+            art and wine for the charity work of Rotary Club of Beijing</p>
+        <br>
+
+        <p>北京扶轮社邀请您,同庆新年共襄慈善</p>
+
+        <p>品红酒佳酿,尝精致美食.艺术品与红酒慈善拍卖,所得收益将用于北京扶轮社慈善项目</p>
+    </div>
+    <div class="content content2">
+        <p>Auction of the following painitngs, painted by Suo Niu,
+            donated by Mike Y.H.Ma
+        </p>
+        <p>拍卖会图画作者索牛,由马毓鸿提供</p>
+
+        <div class="img-box"><img src="images/2.jpg" alt=""></div>
+        <div class="img-box"><img src="images/3.jpg" alt=""></div>
+        <div class="img-box"><img src="images/4.jpg" alt=""></div>
+        <div class="img-box"><img src="images/5.jpg" alt=""></div>
+    </div>
+
+    <div class="content">
+
+        <p>Address: The ELBE Showroom of Beijing Building Material Trade Tower 10-05, No. A14 Dongtucheng Road, Chaoyang District, Beijing</p>
+
+        <p>Entrance: RMB 400 each of which RMB 200 goes into the charity work of Rotary Beijing</p>
+
+        <p>地址:北京市朝阳区东土城路甲14号北京建材经贸大厦10-05 <br>
+            北京普利希商贸有限责任公司展厅</p>
+
+        <p>入场费:400元(200元用于北京扶轮社慈善项目）</p>
+
+        <div class="img-box"><img src="images/6.jpg" alt=""></div>
+    </div>
+</div>
+<div class="page page-front"></div>
+
+
+<a href="javascript:;" id="next"><span>Click to open</span></a>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+    function isSupports3d() {
+//        return true;
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            return true;
+        }
+        return false;
+
+        var supportsCSS = !!((window.CSS && window.CSS.supports) || window.supportsCSS || false);
+        if(supportsCSS){
+        	var supports3d = CSS.supports("(transform-style: preserve-3d) or (-moz-transform-style: preserve-3d) or (-webkit-transform-style: preserve-3d)");
+			if (supports3d) {
+			    return true;
+			}
+        }
+		return false;
+    }
+     var supports3d = isSupports3d();
+     $('html').addClass(supports3d ? 'supports3d' : 'supports3d-not');
+//   $('html').addClass( 'supports3d' );
+
+    $(function () {
+        $('#next').click(function () {
+            $('html').addClass('opening');
+            var tim = supports3d ? 2000 : 1000;
+            setTimeout(function () {
+                $('html').addClass('open');
+            }, tim);
+        })
+        //$('#next').trigger('click');
+    })
+
+    document.ontouchmove=function(e){
+    	if(!$('html').hasClass('open'))
+    		e.preventDefault && e.preventDefault();
+			// return false;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>传播效果追踪系统大屏展示</title>
+  <meta name="description" content="mx.lin">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="renderer" content="webkit">
+<link href="./main-6c4988b40f7fefbd53cb.min.css" rel="stylesheet"></head>
+<body>
+<div id="root"></div>
+<script>
+  /**
+   * ----------------------
+   * 配置及数据
+   * 页面切换可以通过触摸屏或者鼠标左右滑动,或者键盘上下左右键进行切换
+   * ----------------------
+   *
+   * logo : 左上角LOGO
+   * date : 右上角时间 YYYY-mm-dd HH:ii:ss
+   * initialPage : 初始页面索引
+   * autoplay : 是否自动切换
+   * speed : 切换间隔时间 （毫秒）
+   * 注: 所有参数可通过URL传值,例如:xxx.com?initialPage=1&autoplay=0&speed=20000
+   *
+   * page: 四个页面数据( 如不需要显示某一个页面,可不写到page里)
+   * - workInfluenceRanking : 作品影响力排行
+   * - authorInfluenceRanking : 作者影响力排行
+   * - workAccelerationAbility : 作品传播加速能力
+   * - externalTransferMedia : 外部转载媒体
+   *
+   *   - title : 页面标题
+   *   - tabs : 日周月标签
+   *   - data : 页面主要内容数据,作品列表或者其他数据
+   *   - day30 : 页底下数据
+   *
+   */
+  window.config = (function () {
+    return extend({
+      logo: "/images/CRT.png",
+      date: new Date(),
+      initialPage: 0,
+      autoplay: 1,
+      speed: 20000,
+      page: {
+        'workInfluenceRanking': {
+          title: '作品影响力排行',
+          tabs: {
+            day: {
+              top: 2390345794,
+              unit: '篇',
+              works: 4567000,
+              date: '2014.3.1日'
+            },
+            week: {
+              top: 63450343,
+              unit: '篇',
+              works: 35629,
+              date: '18周 4.1—4.7日',
+              data: [2, 200, 101, 134, 90, 0]
+            },
+            month: {
+              top: 563342168,
+              unit: '篇',
+              works: 867532,
+              date: '4月',
+              data: [3, 5, 10, 5]
+            }
+          },
+          data: {
+            day: {
+              reprint: '',
+              comment: null
+            },
+            week: {
+              reprint: generateData(),
+              comment: generateData()
+            },
+            month: {
+              reprint: generateData(),
+              comment: generateData()
+            }
+          },
+          day30: {
+            category: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+            value: [94, 77, 88, 82, 74, 70, 53, 96, 68, 68, 83, 61, 58, 60, 67, 75, 92, 63, 59, 66, 56, 61, 81, 77, 95, 59, 76, 68, 88, 66, 94],
+            requestUrl: '/CurrentArticleCount_Ajax.jsp',  // AJAX 请求地址
+            requestTime: 2000, // AJAX 请求间隔时间（毫秒）
+            average: 40,
+            unit: '篇',
+            title: '近30天',
+            desc: '日文章发布情况',
+            averageDesc: '上30天\n文章发布\n日均线'
+          }
+        },
+        'authorInfluenceRanking': {
+          title: '作者影响力排行',
+          tabs: {
+            week: {
+              top: 63450343,
+              unit: '篇',
+              works: 35629,
+              date: '18周 4.1—4.7日',
+              data: [2, 132, 101, 134, 90, 230, 10]
+            },
+            month: {
+              top: 563342168,
+              unit: '篇',
+              works: 867532,
+              date: '4月',
+              data: [1, 4, 20, 6]
+            }
+          },
+          data: {
+            week: {
+              reprint: generateData(),
+              comment: null
+            },
+            month: {
+              reprint: generateData(),
+              comment: generateData()
+            }
+          }
+        },
+        'workAccelerationAbility': {
+          title: '作品传播加速能力',
+          tabs: {
+            week: {
+              top: 63450343,
+              unit: '次',
+              works: 859494829,
+              date: '18周 4.1—4.7日',
+              data: [2, 132, 101, 134, 90, 230, 10]
+            },
+            month: {
+              top: 563342168,
+              unit: '次',
+              works: 867532,
+              date: '4月',
+              data: [1, 5, 20, 1]
+            }
+          },
+          data: {
+            week: {
+              value: [300, 280, 250, 220, 200, 190, 186, 150, 140, 100, 10, -100],
+              category: ['人民网', '海外版', '国家人文历史', '环球时报', '健康早报', '中国汽车能源报', '环球人物', '地方部', '总编室', '评论部', '新闻协调部', '人民日报客户端', '人民在线', '人民论坛', '国际部']
+            },
+            month: {
+              value: [400, 380, 250, 220, 200, 190, 186, 150, 140, 100, 10, -100],
+              category: ['人民网', '海外版', '国家人文历史', '环球时报', '健康早报', '中国汽车能源报', '环球人物', '地方部', '总编室', '评论部', '新闻协调部', '人民日报客户端', '人民在线', '人民论坛', '国际部']
+            }
+          },
+          day30: {
+            category: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+            value: [94, 77, 88, 82, 74, 70, 53, 96, 68, 68, 83, 61, 58, 60, 67, 75, 92, 63, 59, 66, 56, 61, 81, 77, 95, 59, 76, 68, 88, 66, 94],
+            requestUrl: '/CurrentArticleCount_Ajax.jsp',  // AJAX 请求地址
+            requestTime: 10 * 60 * 1000, // AJAX 请求间隔时间（毫秒）
+            average: 40,
+            unit: '次',
+            title: '近30天',
+            desc: '日文章转载情况',
+            averageDesc: '上30天\n文章转载\n日均线'
+          }
+        },
+        'externalTransferMedia': {
+          title: '外部转载媒体',
+          tabs: {
+            week: {
+              top: 63450343,
+              unit: '次',
+              works: 35629,
+              date: '18周 4.1—4.7日',
+              data: [2, 132, 101, 134, 90, 230, 10]
+            },
+            month: {
+              top: 563342168,
+              unit: '次',
+              works: 867532,
+              date: '4月',
+              data: [10, 5, 20, 2]
+            }
+          },
+          mediaCount: {
+            week:32,
+            month:12
+          }, //媒体总数量
+          data: {
+            week: [],
+            month: [
+              {name: '新浪', value: 1111135240, direction: 'up'},
+              {name: '新浪', value: 120, direction: 'up'},
+              {name: '网易', value: 110, direction: 'down'},
+              {name: '纽约时报', value: 10, direction: 'up'},
+              {name: '搜狐', value: 90, direction: 'up'},
+              {name: '百度', value: 70},
+              {name: '新华社', value: 40},
+              {name: '腾讯新闻', value: 20},
+              {name: '无界', value: 10},
+              {name: '彭博社', value: 1}
+            ]
+          }
+        }
+      }
+    }, getRequest());
+
+    /**
+     * 生成示范数据
+     * @returns {Array}
+     */
+    function generateData() {
+      var data = [];
+      for (var i = 0; i < 10; i++) {
+        data.push({
+          title: '去年12月新能源汽车产量增3倍去年12月新能源汽车产量增3倍',
+          author: '王政',
+          source: '人民日报',
+          num: Math.random() * 2000 | 0,
+          total: Math.random() * 200000 | 0
+        });
+      }
+      return data;
+    }
+
+    /**
+     * 获取URL参数
+     */
+    function getRequest() {
+      var url = location.search;
+      var theRequest = {};
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        var strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+          theRequest[strs[i].split("=")[0]] = parseInt(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+
+    /**
+     * 合并对象
+     */
+    function extend(o, n) {
+      for (var p in n) {
+        o[p] = n[p];
+      }
+      return o;
+    }
+  })();
+
+  /**
+   * 整零点重载页面
+   */
+  function reload () {
+    if(new Date().getTime() > tomorrow) {
+      window.location.reload()
+    } else {
+      setTimeout(reload, 1000)
+    }
+  }
+  var tomorrow = (function () {
+    var now = new Date()
+    return new Date(now.getFullYear(),now.getMonth(),now.getDate()+1).getTime()
+  })()
+  reload()
+
+</script>
+<script src="./main-6c4988b40f7fefbd53cb.min.js"></script></body>
+</html>

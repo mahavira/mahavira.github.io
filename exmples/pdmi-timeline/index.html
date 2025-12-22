@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>春节防骗必看！一条短信如何让人乖乖转账</title>
+  <meta name="description" content="我是描述：电信诈骗竟然进化成这样！一条昂贵的诈骗短信，你猜到了结局，却猜不到手段.......">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link href="./app.min.css" rel="stylesheet"></head>
+<body>
+<div class="content-scrollbar"></div>
+<audio src="./sounds/bg.mp3" id="soundBg" ></audio>
+<audio src="./sounds/vibration.mp3" id="soundVibration"></audio>
+<audio src="./sounds/lightning.mp3" id="soundLightning"></audio>
+<div class="content-wrapper">
+  <div class="container" style="display: none">
+    <div class="scene scene-0">
+      <div class="cover cover-bg bg" style="background-image:url(./images/compressed/0/bg.jpg)"></div>
+    </div>
+
+    <div class="scene intro">
+      <div class="cover cover-bg bgcolor"></div>
+      <div class="text-warp">
+        <div class="intro-text">
+          <p>策划：吴莺、徐向荣、戴玉</p>
+          <p>文案：戴玉</p>
+          <p>设计：徐向荣</p>
+          <p>技术：林明熊</p>
+          <p>数据支持（实习生）：何子章、文鑫宇、唐伊豆、林志伟、谢嘉颖、潘蕾</p>
+          <a href="http://zt.360.cn/1101061855.php?dtid=1101062370&did=210083336">http://zt.360.cn/1101061855.php?dtid=1101062370&did=210083336</a>
+          <a href="http://zt.360.cn/1101061855.php?dtid=1101062370&did=1101654296">http://zt.360.cn/1101061855.php?dtid=1101062370&did=1101654296</a>
+          <a href="javascript:;" id="replay"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="control">
+      <a href="javascript:;" id="controlPlay">AUTOPLAY <span>ON</span></a>
+      <b>|</b>
+      <a href="javascript:;" id="controlSound">SOUND <span>ON</span></a>
+    </div>
+  </div>
+</div>
+
+<div id="orientation" style="display: none"></div>
+
+<div class="loading">
+  <div class="loadingBar"><span></span></div>
+</div>
+
+<div class="sliderDown">
+  <div class="inner"></div>
+</div>
+
+<script src="./bower_components/jquery/dist/jquery.js"></script>
+<script src="./bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+<script src="./bower_components/scroller/src/Animate.js"></script>
+<script src="./bower_components/scroller/src/Scroller.js"></script>
+<script type="text/javascript" src="http://wechat.pdmi.cn/wechat/js/weixin/jweixin-1.0.0.js"></script>
+<script>
+  var str = '<script type="text/javascript" src="http://wechat.pdmi.cn/wechat/sign?random=' + Math.random() + '"\/><\/script>';
+  str += '<script type="text/javascript" src="http://weixin.pdmi.cn/jz/js/app.js"><\/script>';
+  document.write(str);
+  var _path = window.location.href;
+  var arr = _path.replace("http://", "").split("/");
+  _path = "http://" + arr[0] + "/" + arr[1] + "/";
+  wx.ready(function () {
+    wx_data.title = '春节防骗必看！一条短信如何让人乖乖转账';
+    wx_data.desc = '电信诈骗竟然进化成这样！一条昂贵的诈骗短信，你猜到了结局，却猜不到手段.......';
+    wx_data.imgUrl = _path + "images/compressed/share.jpg";
+    wx_data.link = window.location.href;
+    // 分享到朋友圈
+    shareTimeline(wx_data);
+    // 分享给好友
+    shareAppMessage(wx_data);
+  });
+</script>
+<script type="text/javascript">
+  _mwt=window._mwt||[];
+  _mwt.push(["_setAutoPageview", false]);
+  _mwt.push(["_setOpenId", pdmi_appid]);
+  (function() {
+    var mz = document.createElement("script");
+    mz.src = "//wechat.uar.hubpd.com/tracking-code/wx.js?mznqwqrn";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(mz, s);
+  })();
+</script>
+<script src="./app.min.js"></script></body>
+</html>

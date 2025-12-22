@@ -1,0 +1,20 @@
+{
+  "errorCode": 0,
+  "data": {
+    "score": 11,
+    "list": [
+      {
+        "username": "刘德华1",
+        "picture": "./examples/picture.jpg",
+        "money": 10,
+        "is_self":1
+      },
+      {
+        "username": "刘德华2",
+        "picture": "./examples/picture.jpg",
+        "money": 10,
+        "is_self":0
+      }
+    ]
+  }
+}
